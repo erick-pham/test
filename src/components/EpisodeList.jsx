@@ -1,3 +1,5 @@
+import { split } from "postcss/lib/list";
+
 /* eslint-disable react/prop-types */
 export default function EpisodeList({ episodeData }) {
   return (
@@ -35,7 +37,9 @@ export default function EpisodeList({ episodeData }) {
                 return (
                   <a
                     key={ep.relativeLink}
-                    href={`/movies/${ep.relativeLink}`}
+                    href={`/movies/${ep.relativeLink.split("/")[0]}/watch/${
+                      ep.relativeLink.split("/")[1]
+                    }`}
                     className={`flex h-[45px] min-w-[45px] items-center justify-center rounded-md font-semibold transition-all duration-200 ${
                       isActive
                         ? "scale-110 bg-blue-600 text-white shadow-lg shadow-blue-500/50"
