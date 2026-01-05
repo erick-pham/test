@@ -61,17 +61,7 @@ export const appRouter = createBrowserRouter([
       {
         path: "",
         element: <VerificationRouts />,
-        children: [
-          {
-            path: "/user/forgot-password/otp",
-            element: <ConfirmOtp />,
-          },
-          {
-            path: "/user/forgot-password/otp/confirm",
-            element: <ResetPassword />,
-          },
-          ,
-        ],
+        children: [],
       },
     ],
   },
