@@ -14,8 +14,8 @@ import WatchLater from "../pages/WatchLater";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ForgotPassword from "../pages/forgotPassword/ForgotPassword";
-import ConfirmOtp from "../pages/forgotPassword/ConfirmOtp";
-import ResetPassword from "../pages/forgotPassword/ResetPassword";
+import MovieDetail from "../pages/MovieDetail";
+import MovieWatch from "../pages/MovieWatch";
 
 const AppLayout = () => {
   return (
@@ -41,6 +41,8 @@ export const appRouter = createBrowserRouter([
     ),
     children: [
       { path: "", element: <HomePage /> },
+      { path: "/movies/:movieId", element: <MovieDetail /> },
+      { path: "/movies/:movieId/watch/:episode", element: <MovieWatch /> },
       {
         path: "",
         element: <ProtectedRoutes />,
